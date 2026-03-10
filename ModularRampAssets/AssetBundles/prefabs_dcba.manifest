@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.50f1
+CRC: 857884023
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4cbceac215db7317020aaccb97f5c622
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5527383dc91eba37123fc67ad6efaa19
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0cef002d8bf8f032e7e486ef5e4e7fba
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ModularRamp/Prefabs/ModularRampDouble.png
+- Assets/ModularRamp/Prefabs/ModularRampSingle.png
+- Assets/ModularRamp/Prefabs/ModularRampTriple.png
+- Assets/ModularRamp/Prefabs/ModularRampEntrance.png
+- Assets/ModularRamp/Prefabs/ModularRampCenter.png
+Dependencies: []

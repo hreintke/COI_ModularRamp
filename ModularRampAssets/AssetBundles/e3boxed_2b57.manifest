@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.50f1
+CRC: 2087421971
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4ab6aa8ddff7a43252dc9cf12bfb8466
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 83a4f80a9849befbea20413566db4b7e
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b21605a52e6f619512640c7f4376d370
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ModularRamp/Prefabs/E3Boxed.prefab
+Dependencies:
+- C:/Userdata/CaptainOfIndustry/Mods/ModularRamp/ModularRampAssets/AssetBundles/materials_23da

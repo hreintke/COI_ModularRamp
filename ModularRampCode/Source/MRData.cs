@@ -12,7 +12,6 @@ using Mafi.Core.Vehicles.Trucks;
 using Mafi.Localization;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,184 +25,288 @@ public class MRData : IModData
 
     public void RegisterData(ProtoRegistrator registrator)
     {
-        EntityLayoutParams layoutParams = new EntityLayoutParams(customTokens: (IEnumerable<CustomLayoutToken>)new CustomLayoutToken[9]
+        EntityLayoutParams layoutParams = new EntityLayoutParams(customTokens: (IEnumerable<CustomLayoutToken>)new CustomLayoutToken[]
         {
-                    new CustomLayoutToken("&0]", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
-        {
-          int heightToExcl = h;
-          int? terrainSurfaceHeight = new int?(0);
-          Proto.ID? nullable = new Proto.ID?(p.HardenedFloorSurfaceId);
-          int? minTerrainHeight = new int?();
-          int? maxTerrainHeight = new int?();
-          Fix32? vehicleHeight = new Fix32?();
-          Proto.ID? terrainMaterialId = new Proto.ID?();
-          Proto.ID? surfaceId = new Proto.ID?();
-          return new LayoutTokenSpec(heightToExcl: heightToExcl, terrainSurfaceHeight: terrainSurfaceHeight, minTerrainHeight: minTerrainHeight, maxTerrainHeight: maxTerrainHeight, vehicleHeight: vehicleHeight, terrainMaterialId: terrainMaterialId, surfaceId: surfaceId);
-        })),
-            new CustomLayoutToken("%0=", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
-            {
-                int heightFrom = h - 1;
-                int heightToExcl = h;
-                int? nullable1 = new int?(h - 1);
-                Fix32? nullable2 = new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value);
-                Proto.ID? nullable3 = new Proto.ID?(p.HardenedFloorSurfaceId);
-                int? terrainSurfaceHeight = new int?();
-                int? minTerrainHeight = new int?();
-                int? maxTerrainHeight = nullable1;
-                Fix32? vehicleHeight = nullable2;
-                Proto.ID? terrainMaterialId = new Proto.ID?();
-                Proto.ID? surfaceId = nullable3;
-                return new LayoutTokenSpec(
-                    heightFrom,
-                    heightToExcl,
-                    terrainSurfaceHeight: terrainSurfaceHeight,
-                    minTerrainHeight: minTerrainHeight,
-                    maxTerrainHeight: maxTerrainHeight,
-                    vehicleHeight: vehicleHeight,
-                    terrainMaterialId: terrainMaterialId,
-                    surfaceId: surfaceId);
-            })),
+           new CustomLayoutToken("C5]", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ( (p, h) =>
+             new LayoutTokenSpec(heightFrom : -2,
+                                 heightToExcl : 3,
+                                 LayoutTileConstraint.Ground | LayoutTileConstraint.NoRubbleAfterCollapse,
+                                 minTerrainHeight: new int?(-2),
+                                 maxTerrainHeight: new int?(0),
+                                 vehicleHeight :  new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+
+           new CustomLayoutToken("D4]", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ( (p, h) =>
+             new LayoutTokenSpec(heightFrom : 2,
+                                 heightToExcl :3,
+                                 LayoutTileConstraint.Ground | LayoutTileConstraint.NoRubbleAfterCollapse,
+                                 minTerrainHeight: new int?(-2),
+                                 maxTerrainHeight: new int?(2),
+                                 vehicleHeight : new Fix32?((Fix32)(2))))),
+
+           new CustomLayoutToken("C3]", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ( (p, h) =>
+             new LayoutTokenSpec(heightFrom : 2,
+                                  heightToExcl : 3,
+                                  LayoutTileConstraint.Ground | LayoutTileConstraint.NoRubbleAfterCollapse,
+                                  minTerrainHeight: new int?(-2),
+                                  maxTerrainHeight: new int?(2),
+                                  vehicleHeight :  new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+
+            new CustomLayoutToken("&0]", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
+              new LayoutTokenSpec(heightFrom : 0,
+                                 heightToExcl : h,
+                                 maxTerrainHeight : new int?(h-1)
+                                 ))),
+
             new CustomLayoutToken("_0=", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
-            {
-                int heightFrom = h - 1;
-                int heightToExcl = h;
-                int? terrainSurfaceHeight = new int?();
-                int? minTerrainHeight = new int?();
-                int? maxTerrainHeight = new int?(h - 1);
-                Fix32? vehicleHeight = new Fix32?((Fix32) (h - 1));
-                Proto.ID? terrainMaterialId = new Proto.ID?();
-                Proto.ID? surfaceId = new Proto.ID?();
-                return new LayoutTokenSpec(heightFrom, heightToExcl, terrainSurfaceHeight: terrainSurfaceHeight, minTerrainHeight: minTerrainHeight, maxTerrainHeight: maxTerrainHeight, vehicleHeight: vehicleHeight, terrainMaterialId: terrainMaterialId, surfaceId: surfaceId);
-            })),
-            new CustomLayoutToken("<R1", (Func<EntityLayoutParams, int, LayoutTokenSpec>)
-                ((p, h) => new LayoutTokenSpec(heightToExcl: 1,
-                surfaceId: new Proto.ID?(p.HardenedFloorSurfaceId),
-                isRamp: true))),
+              new LayoutTokenSpec(heightFrom : h - 1,
+                                  heightToExcl : h,
+                                  maxTerrainHeight : new int?(h - 1),
+                                  vehicleHeight : new Fix32?((Fix32) (h - 1))))),
 
-            new CustomLayoutToken("<R2", (Func<EntityLayoutParams, int, LayoutTokenSpec>)
-                ((p, h) => new LayoutTokenSpec(1, 2, maxTerrainHeight: new int?(1), isRamp: true))),
-            new CustomLayoutToken("<R3", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => new LayoutTokenSpec(2, 3, maxTerrainHeight: new int?(1), isRamp: true))),
 
-            new CustomLayoutToken("=23", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => new LayoutTokenSpec(1, 3, maxTerrainHeight: new int?(1), vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+            new CustomLayoutToken("<R0", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
+              new LayoutTokenSpec(heightToExcl: 1,
+                                  surfaceId: new Proto.ID?(p.HardenedFloorSurfaceId),
+                                  isRamp: true))),
 
-            new CustomLayoutToken("=24", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => new LayoutTokenSpec(2, 4, maxTerrainHeight: new int?(1), vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+            new CustomLayoutToken("<R1", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
+              new LayoutTokenSpec(heightToExcl: 1,
+                                  surfaceId: new Proto.ID?(),
+                                  isRamp: true))),
 
-            new CustomLayoutToken("=3-", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => new LayoutTokenSpec(3, 4, maxTerrainHeight: new int?(1), vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))) }
+            new CustomLayoutToken("<R2", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
+              new LayoutTokenSpec(heightFrom : 1, 
+                                  heightToExcl : 2, 
+                                  maxTerrainHeight: new int?(1), 
+                                  isRamp: true))),
 
-        );
+            new CustomLayoutToken("<R3", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
+              new LayoutTokenSpec(heightFrom : 2,
+                                  heightToExcl : 3, 
+                                  maxTerrainHeight: new int?(2), 
+                                  isRamp: true))),
+
+            new CustomLayoutToken("<R4", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
+              new LayoutTokenSpec(heightFrom : 3, 
+                                  heightToExcl : 4, 
+                                  maxTerrainHeight: new int?(3), 
+                                  isRamp: true))),
+
+            new CustomLayoutToken("=23", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
+              new LayoutTokenSpec(heightFrom : 1, 
+                                  heightToExcl : 3, 
+                                  maxTerrainHeight: new int?(2), 
+                                  vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+
+            new CustomLayoutToken("=24", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
+              new LayoutTokenSpec(heightFrom : 2, 
+                                  heightToExcl : 4, 
+                                  maxTerrainHeight: new int?(3), 
+                                  vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+
+            new CustomLayoutToken("=3-", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
+              new LayoutTokenSpec(heightFrom : 3, 
+                                  heightToExcl : 4, 
+                                  maxTerrainHeight: new int?(3), 
+                                  vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
+
+            new CustomLayoutToken("+3-", (Func<EntityLayoutParams, int, LayoutTokenSpec>)((p, h) => 
+              new LayoutTokenSpec(heightFrom : 3, 
+                                  heightToExcl : 4,
+                                  minTerrainHeight: -2, 
+                                  maxTerrainHeight: 3, 
+                                  vehicleHeight: new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))) }
+          );
 
         EntityLayout newLayout;
         EntityCostsTpl entityCost;
 
+        // Entrance 1
+
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
-            "[1][1][2][2]=23=23=23=24=24=24&5]",
-            "_1_<R1<R1<R1<R2<R2<R2<R3<R3<R3_4=",
-            "_1_<R1<R1<R1<R2<R2<R2<R3<R3<R3_4=",
-            "_1_<R1<R1<R1<R2<R2<R2<R3<R3<R3_4=",
-            "_1_<R1<R1<R1<R2<R2<R2<R3<R3<R3_4=",
-            "_1_<R1<R1<R1<R2<R2<R2<R3<R3<R3_4=",
-            "_1_<R1<R1<R1<R2<R2<R2<R3<R3<R3_4=",
-            "[1][1][2][2]=23=23=23=24=24=24&5]");
-        
-        entityCost = new EntityCostsTpl.Builder().CP2(40).Concrete(100);
+            "[1][1][2]&4]",
+            "_1_<R0<R1_2=",
+            "_1_<R0<R1_2=",
+            "_1_<R0<R1_2=",
+            "_1_<R0<R1_2=",
+            "_1_<R0<R1_2=",
+            "_1_<R0<R1_2=",
+            "[1][1][2]&4]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(100);
 
         registerPrototype(registrator,
-            PrototypeIDs.LocalEntities.ModularRampEntrance,
-            "ModularRamp (entrance)",
+            PrototypeIDs.LocalEntities.ModularRampEntrance1,
+            "ModularRamp (Ramp 1)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
-//            "Assets/ModularRamp/Prefabs/EntranceHlafPillarTextured.prefab",
-//            "Assets/ModularRamp/Prefabs/EntranceHlafPillarTexturedBoxed.prefab",
-            "Assets/ModularRamp/Prefabs/EntranceBoxed.prefab",
+            "Assets/ModularRamp/Prefabs/Entrance1BakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
             );
 
+        // Entrance 2
 
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
-           "=3-=3-",
-           "_4=_4=",
-           "_4=_4=",
-           "_4=_4=",
-           "_4=_4=",
-           "_4=_4=",
-           "_4=_4=",
-           "=3-=3-");
+            "[1][1][2]=23=23&5]",
+            "_1_<R0<R1<R2<R2_3=",
+            "_1_<R0<R1<R2<R2_3=",
+            "_1_<R0<R1<R2<R2_3=",
+            "_1_<R0<R1<R2<R2_3=",
+            "_1_<R0<R1<R2<R2_3=",
+            "_1_<R0<R1<R2<R2_3=",
+            "[1][1][2]=23=23&5]");
 
-        entityCost = new EntityCostsTpl.Builder().CP2(20).Concrete(40);
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(100);
 
         registerPrototype(registrator,
-            PrototypeIDs.LocalEntities.ModularRampCenter,
-            "ModularRamp (center)",
+            PrototypeIDs.LocalEntities.ModularRampEntrance2,
+            "ModularRamp (Ramp 2)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
-        //            "Assets/ModularRamp/Prefabs/CenterRoad2.prefab",
-        "Assets/ModularRamp/Prefabs/CenterBoxed.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampCenter.png"
+            "Assets/ModularRamp/Prefabs/Entrance2BakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
             );
 
+        // Entrance 3
+
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
+            "[1][1][2]=23=23=24=24&5]",
+            "_1_<R0<R1<R2<R2<R3<R3_4=",
+            "_1_<R0<R1<R2<R2<R3<R3_4=",
+            "_1_<R0<R1<R2<R2<R3<R3_4=",
+            "_1_<R0<R1<R2<R2<R3<R3_4=",
+            "_1_<R0<R1<R2<R2<R3<R3_4=",
+            "_1_<R0<R1<R2<R2<R3<R3_4=",
+            "[1][1][2]=23=23=24=24&5]");
 
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(120);
 
-           "&5]_4=_4=_4=_4=_4=_4=&5]",
-           "=3-_4=_4=_4=_4=_4=_4=_4=",
-           "=3-_4=_4=_4=_4=_4=_4=_4=",
-           "=3-_4=_4=_4=_4=_4=_4=_4=",
-           "=3-_4=_4=_4=_4=_4=_4=_4=",
-           "=3-_4=_4=_4=_4=_4=_4=_4=",
-           "=3-_4=_4=_4=_4=_4=_4=_4=",
-           "&5]=3-=3-=3-=3-=3-=3-&5]");
+        registerPrototype(registrator,
+            PrototypeIDs.LocalEntities.ModularRampEntrance,
+            "ModularRamp (Ramp 3)",
+            newLayout,
+            entityCost.MapToEntityCosts(registrator),
+            "Assets/ModularRamp/Prefabs/Entrance3BakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            );
+
+        // Entrance 4
+
+        newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
+            "[1][1][2]=23=23=24=24=24=24&5]",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4_5=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4_5=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4_5=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4_5=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4_5=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4_5=",
+            "[1][1][2]=23=23=24=24=24=24&5]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(140);
+
+        registerPrototype(registrator,
+            PrototypeIDs.LocalEntities.ModularRampEntrance4,
+            "ModularRamp (Ramp 4)",
+            newLayout,
+            entityCost.MapToEntityCosts(registrator),
+            "Assets/ModularRamp/Prefabs/Entrance4BakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            );
+
+        // Extension Single
+
+        newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
+            "C5]D4]D4]D4]D4]D4]C5]C5]",
+            "D4]D4]D4]D4]D4]D4]C5]C5]",
+            "D4]D4]D4]D4]D4]D4]C3]C3]",
+            "D4]D4]D4]D4]D4]D4]C3]C3]",
+            "D4]D4]D4]D4]D4]D4]C3]C3]",
+            "D4]D4]D4]D4]D4]D4]C3]C3]",
+            "C5]C5]C3]C3]C3]C3]C5]C5]",
+            "C5]C5]C3]C3]C3]C3]C5]C5]");
 
         entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(200);
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntranceSingle,
-            "ModularRamp (single)",
+            "ModularRamp (Single)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
-            "Assets/ModularRamp/Prefabs/E1Boxed.prefab",
+            "Assets/ModularRamp/Prefabs/Extension1BakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampSingle.png"
-            );
+        );
+
+        // Extension Double 
 
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
-           "&5]=3-=3-=3-=3-=3-=3-&5]",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "&5]_4=_4=_4=_4=_4=_4=&5]");
+            "C5]D4]D4]D4]D4]D4]D4]C5]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "C5]C5]C3]C3]C3]C3]C5]C5]",
+            "C5]C5]C3]C3]C3]C3]C5]C5]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(200);
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntranceDouble,
-            "ModularRamp (double)",
+            "ModularRamp (Double)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
-            "Assets/ModularRamp/Prefabs/E2Boxed.prefab",
+            "Assets/ModularRamp/Prefabs/Extension2BakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampDouble.png"
             );
 
+        // Extension Triple
+
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
-           "&5]_4=_4=_4=_4=_4=_4=&5]",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "_4=_4=_4=_4=_4=_4=_4=_4=",
-           "&5]_4=_4=_4=_4=_4=_4=&5]");
+            "C5]D4]D4]D4]D4]D4]C3]C5]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "D4]D4]D4]D4]D4]D4]D4]D4]",
+            "C3]D4]D4]D4]D4]D4]D4]C3]",
+            "C5]D4]D4]D4]D4]D4]C3]C5]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(200);
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntranceTriple,
-            "ModularRamp (triple)",
+            "ModularRamp (Triple)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
-            "Assets/ModularRamp/Prefabs/E3Boxed.prefab",
+            "Assets/ModularRamp/Prefabs/Extension3BakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampTriple.png"
             );
+
+
+        //------------------------------------------------------------------------
+
+
+        newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
+           "C3]C3]",
+           "D4]D4]",
+           "D4]D4]",
+           "D4]D4]",
+           "D4]D4]",
+           "D4]D4]",
+           "D4]D4]",
+           "C3]C3]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(20).Concrete(40);
+
+        registerPrototype(registrator,
+            PrototypeIDs.LocalEntities.ModularRampCenter,
+            "ModularRamp (Center)",
+            newLayout,
+            entityCost.MapToEntityCosts(registrator),
+            "Assets/ModularRamp/Prefabs/CenterBakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampCenter.png"
+            );
     }
-
-
 
     void registerPrototype(
         ProtoRegistrator registrator,

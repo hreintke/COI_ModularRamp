@@ -28,6 +28,8 @@ public class MRResearch : IModData
             .Description("Underground Transport")
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampCenter)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance)
+            .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance4)
+            .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance2)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntranceSingle)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntranceDouble)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntranceTriple)

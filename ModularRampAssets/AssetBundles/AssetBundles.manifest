@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.50f1
-CRC: 1276439751
+CRC: 1497769627
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -8,143 +8,57 @@ AssetBundleManifest:
       Name: materials_23da
       Dependencies: {}
     Info_1:
-      Name: extension1halfpillartextured_6bd4
+      Name: centerbakedcollider_f86c
       Dependencies:
         Dependency_0: materials_23da
     Info_2:
-      Name: entrancehlafpillartextured_bc1f
+      Name: entrance2bakedcollider_17f9
       Dependencies:
         Dependency_0: materials_23da
     Info_3:
-      Name: centertexture_b442
+      Name: entrance3bakedcollider_fa24
       Dependencies:
         Dependency_0: materials_23da
     Info_4:
-      Name: extension2halfpillartextured_93e9
+      Name: entrancebakedcollider_f0c6
       Dependencies:
         Dependency_0: materials_23da
     Info_5:
-      Name: enxtension3halfplillartextured_ece0
+      Name: extension1bakedcollider_fa6e
       Dependencies:
         Dependency_0: materials_23da
     Info_6:
-      Name: prefabs_dcba
-      Dependencies: {}
+      Name: extension2bakedcollider_6421
+      Dependencies:
+        Dependency_0: materials_23da
     Info_7:
-      Name: centerpart_ee69
+      Name: extension3bakedcollider_3b95
       Dependencies:
         Dependency_0: materials_23da
     Info_8:
-      Name: centertexture_538c
+      Name: entrance_9181
       Dependencies:
         Dependency_0: materials_23da
     Info_9:
-      Name: entension1halfpillar_106c
-      Dependencies:
-        Dependency_0: materials_23da
+      Name: prefabs_dcba
+      Dependencies: {}
     Info_10:
-      Name: entrance_2229
+      Name: entrance4bakedcollider_739f
       Dependencies:
         Dependency_0: materials_23da
     Info_11:
-      Name: entrancehalf_d354
+      Name: extension2bakedcolliderwrong_2ccd
       Dependencies:
         Dependency_0: materials_23da
     Info_12:
-      Name: entrancehalfpillar_ec99
+      Name: entrance1bakedcollider_e9f5
       Dependencies:
         Dependency_0: materials_23da
     Info_13:
-      Name: entrancehlafpillartextured_5178
+      Name: centerbakedcolliderold_6cdc
       Dependencies:
         Dependency_0: materials_23da
     Info_14:
-      Name: enxtension3halfplillartextured_a862
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_15:
-      Name: extension1_9902
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_16:
-      Name: extension1halfpillartextured_d19f
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_17:
-      Name: extension2_4be5
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_18:
-      Name: extension2a_2ece
-      Dependencies: {}
-    Info_19:
-      Name: extension2halfpillar_5140
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_20:
-      Name: extension2halfpillartextured_c135
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_21:
-      Name: extension2s_fd80
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_22:
-      Name: extension2x_fa94
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_23:
-      Name: extension3_df4b
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_24:
-      Name: extension3halfpillar_64ee
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_25:
-      Name: modularcorner_d6b6
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_26:
-      Name: oldprefabs_f32a
-      Dependencies: {}
-    Info_27:
-      Name: side3_60be
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_28:
-      Name: side3half_ece6
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_29:
-      Name: centerroad_5294
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_30:
-      Name: centerroad2_5ace
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_31:
-      Name: centersidetexture_3d73
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_32:
-      Name: centerboxed_9362
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_33:
-      Name: e1boxed_1c70
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_34:
-      Name: e2boxed_4c69
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_35:
-      Name: e3boxed_2b57
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_36:
-      Name: entranceboxed_6dfa
+      Name: centerbakedcolliderold2_8161
       Dependencies:
         Dependency_0: materials_23da

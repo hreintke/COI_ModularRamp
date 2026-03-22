@@ -1,0 +1,194 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.50f1
+CRC: 2616397900
+HashAppended: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: materials_23da
+      Dependencies: {}
+    Info_1:
+      Name: centerpart_ee69
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_2:
+      Name: centertexture_538c
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_3:
+      Name: entension1halfpillar_106c
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_4:
+      Name: entrance_2229
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_5:
+      Name: entrancehalf_d354
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_6:
+      Name: entrancehalfpillar_ec99
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_7:
+      Name: entrancehlafpillartextured_5178
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_8:
+      Name: enxtension3halfplillartextured_a862
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_9:
+      Name: extension1_9902
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_10:
+      Name: extension1halfpillartextured_d19f
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_11:
+      Name: extension2_4be5
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_12:
+      Name: extension2a_2ece
+      Dependencies: {}
+    Info_13:
+      Name: extension2halfpillar_5140
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_14:
+      Name: extension2halfpillartextured_c135
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_15:
+      Name: extension2s_fd80
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_16:
+      Name: extension2x_fa94
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_17:
+      Name: extension3_df4b
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_18:
+      Name: extension3halfpillar_64ee
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_19:
+      Name: modularcorner_d6b6
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_20:
+      Name: oldprefabs_f32a
+      Dependencies: {}
+    Info_21:
+      Name: side3_60be
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_22:
+      Name: side3half_ece6
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_23:
+      Name: centerbakedcollider_f86c
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_24:
+      Name: entrance2bakedcollider_17f9
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_25:
+      Name: entrance3bakedcollider_fa24
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_26:
+      Name: entrancebakedcollider_f0c6
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_27:
+      Name: extension1bakedcollider_fa6e
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_28:
+      Name: extension2bakedcollider_6421
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_29:
+      Name: extension3bakedcollider_3b95
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_30:
+      Name: center_bbda
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_31:
+      Name: centerboxed_08f2
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_32:
+      Name: e1_43f5
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_33:
+      Name: e1extended_3588
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_34:
+      Name: e1extendedboxed_ec9b
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_35:
+      Name: e2_5e5b
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_36:
+      Name: e2extended_1df2
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_37:
+      Name: e2extendedmeshboxed_4184
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_38:
+      Name: e3extended_bddd
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_39:
+      Name: entrance_9181
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_40:
+      Name: entrance2_c7bb
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_41:
+      Name: entrance3steep_a8ce
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_42:
+      Name: entrance3stp1_5356
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_43:
+      Name: entrance3stp1mesh_5add
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_44:
+      Name: entrance4_273e
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_45:
+      Name: entrance4meshbox_0ea7
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_46:
+      Name: extension1extendedbakedcollider_04cf
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_47:
+      Name: prefabsold_ec14
+      Dependencies: {}

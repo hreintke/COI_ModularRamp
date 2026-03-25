@@ -63,6 +63,12 @@ public class MRData : IModData
                                   maxTerrainHeight : new int?(h - 1),
                                   vehicleHeight : new Fix32?((Fix32) (h - 1))))),
 
+             new CustomLayoutToken("<U0", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
+              new LayoutTokenSpec(heightFrom : (h==0) ? 0 : h - 1,
+                                  heightToExcl: (h==0)? 1 : h,
+                                  surfaceId: (h==0) ? new Proto.ID?(p.HardenedFloorSurfaceId) : new Proto.ID?(),
+                                  isRamp: true))),
+
 
             new CustomLayoutToken("<R0", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
               new LayoutTokenSpec(heightToExcl: 1,
@@ -90,6 +96,16 @@ public class MRData : IModData
               new LayoutTokenSpec(heightFrom : 3, 
                                   heightToExcl : 4, 
                                   maxTerrainHeight: new int?(3), 
+                                  isRamp: true))),
+            new CustomLayoutToken("<R5", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
+              new LayoutTokenSpec(heightFrom : 4,
+                                  heightToExcl : 5,
+                                  maxTerrainHeight: new int?(4),
+                                  isRamp: true))),
+            new CustomLayoutToken("<R6", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) =>
+              new LayoutTokenSpec(heightFrom : 5,
+                                  heightToExcl : 6,
+                                  maxTerrainHeight: new int?(5),
                                   isRamp: true))),
 
             new CustomLayoutToken("=23", (Func<EntityLayoutParams, int, LayoutTokenSpec>) ((p, h) => 
@@ -120,6 +136,8 @@ public class MRData : IModData
 
         EntityLayout newLayout;
         EntityCostsTpl entityCost;
+
+        // Entrance 1
 
         // Entrance 1
 
@@ -213,6 +231,27 @@ public class MRData : IModData
             "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
             );
 
+        newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
+    "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]",
+    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+    "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(140);
+
+        registerPrototype(registrator,
+            PrototypeIDs.LocalEntities.ModularRampEntrance6,
+            "ModularRamp (Ramp 6)",
+            newLayout,
+            entityCost.MapToEntityCosts(registrator),
+            "Assets/ModularRamp/Prefabs/Entrance6BakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            );
+
         // Extension Single
 
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
@@ -300,10 +339,31 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampCenter,
-            "ModularRamp (Center)",
+            "ModularRamp (Center Double)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/CenterBakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampCenter.png"
+            );
+
+        newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
+            "C3]",
+            "D4]",
+            "D4]",
+            "D4]",
+            "D4]",
+            "D4]",
+            "D4]",
+            "C3]");
+
+        entityCost = new EntityCostsTpl.Builder().CP2(20).Concrete(40);
+
+        registerPrototype(registrator,
+            PrototypeIDs.LocalEntities.ModularRampCenterSingle,
+            "ModularRamp (Center Single)",
+            newLayout,
+            entityCost.MapToEntityCosts(registrator),
+            "Assets/ModularRamp/Prefabs/CenterSingleBakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampCenter.png"
             );
     }

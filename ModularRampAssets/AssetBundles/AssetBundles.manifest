@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.50f1
-CRC: 1497769627
+CRC: 2476239365
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -12,53 +12,57 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: materials_23da
     Info_2:
-      Name: entrance2bakedcollider_17f9
-      Dependencies:
-        Dependency_0: materials_23da
-    Info_3:
       Name: entrance3bakedcollider_fa24
       Dependencies:
         Dependency_0: materials_23da
-    Info_4:
+    Info_3:
       Name: entrancebakedcollider_f0c6
       Dependencies:
         Dependency_0: materials_23da
-    Info_5:
+    Info_4:
       Name: extension1bakedcollider_fa6e
       Dependencies:
         Dependency_0: materials_23da
-    Info_6:
+    Info_5:
       Name: extension2bakedcollider_6421
       Dependencies:
         Dependency_0: materials_23da
-    Info_7:
+    Info_6:
       Name: extension3bakedcollider_3b95
       Dependencies:
         Dependency_0: materials_23da
-    Info_8:
+    Info_7:
       Name: entrance_9181
       Dependencies:
         Dependency_0: materials_23da
-    Info_9:
+    Info_8:
       Name: prefabs_dcba
       Dependencies: {}
-    Info_10:
+    Info_9:
       Name: entrance4bakedcollider_739f
       Dependencies:
         Dependency_0: materials_23da
-    Info_11:
+    Info_10:
       Name: extension2bakedcolliderwrong_2ccd
       Dependencies:
         Dependency_0: materials_23da
-    Info_12:
+    Info_11:
       Name: entrance1bakedcollider_e9f5
       Dependencies:
         Dependency_0: materials_23da
-    Info_13:
+    Info_12:
       Name: centerbakedcolliderold_6cdc
       Dependencies:
         Dependency_0: materials_23da
-    Info_14:
+    Info_13:
       Name: centerbakedcolliderold2_8161
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_14:
+      Name: centersinglebakedcollider_1ff0
+      Dependencies:
+        Dependency_0: materials_23da
+    Info_15:
+      Name: entrance2bakedcollider_17f9
       Dependencies:
         Dependency_0: materials_23da

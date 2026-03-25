@@ -8,7 +8,7 @@
 	
 	<PropertyGroup>
 		<AssemblyName>$(ModName)</AssemblyName>
-		<Version>2.1.5</Version>
+		<Version>2.1.8</Version>
 		<OutputType>Library</OutputType>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<LangVersion>latest</LangVersion>
@@ -34,6 +34,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="CreateIcon.cs" />
+	  <Compile Remove="IconGenerator.cs" />
 	  <Compile Remove="ModularRampMb.cs" />
 	  <Compile Remove="ModularRampMbFactory.cs" />
 	  <Compile Remove="Source\MRData - Copy %282%29.cs" />

@@ -26,6 +26,9 @@ centerbakedcolliderold_6cdc
 centerbakedcolliderold2_8161
     Assets/ModularRamp/Prefabs/CenterBakedColliderOLd2.prefab
 
+centersinglebakedcollider_1ff0
+    Assets/ModularRamp/Prefabs/CenterSingleBakedCollider.prefab
+
 entrance1bakedcollider_e9f5
     Assets/ModularRamp/Prefabs/Entrance1BakedCollider.prefab
 

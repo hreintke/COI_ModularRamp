@@ -230,7 +230,7 @@ public class MRData : IModData
             "Assets/ModularRamp/Prefabs/Entrance4BakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
             );
-
+#if false
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
     "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]",
     "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
@@ -251,7 +251,7 @@ public class MRData : IModData
             "Assets/ModularRamp/Prefabs/Entrance6BakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
             );
-
+#endif
         // Extension Single
 
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,

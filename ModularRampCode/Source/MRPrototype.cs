@@ -27,13 +27,16 @@ public partial class PrototypeIDs
     }
 }
 
-public class MRPrototype : LayoutEntityProto, IProto
+public class MRPrototype : LayoutEntityProto, IProto, IProtoWithTiers, IProtoWithIcon
 {
     public MRPrototype(MRPrototype.ID id, Str strings, EntityLayout layout, EntityCosts costs, Gfx graphics)
          : base(id, strings, layout, costs, graphics)
     {
+        this.TierData = new TierData((IProtoWithTiers)this, -1);
     }
 
     public override Type EntityType => typeof(ModularRamp);
 
+    public ITierData TierData  {get;}
+    
 }

@@ -1,5 +1,6 @@
 ﻿using Mafi;
 using Mafi.Base;
+using Mafi.Collections;
 using Mafi.Collections.ImmutableCollections;
 using Mafi.Core;
 using Mafi.Core.Entities.Dynamic;
@@ -22,6 +23,8 @@ namespace ModularRampMod;
 public class MRData : IModData
 {
     public static readonly LocStr RAMPS_DESC;
+
+    public Lyst<MRPrototype> allPrototypes = new();
 
     public void RegisterData(ProtoRegistrator registrator)
     {
@@ -155,7 +158,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntrance1,
-            "ModularRamp (Ramp 1)",
+            "Modular Ramp (height 1)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance1BakedCollider.prefab",
@@ -178,7 +181,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntrance2,
-            "ModularRamp (Ramp 2)",
+            "Modular Ramp (height 2)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance2BakedCollider.prefab",
@@ -201,7 +204,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntrance,
-            "ModularRamp (Ramp 3)",
+            "Modular Ramp (height 3)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance3BakedCollider.prefab",
@@ -224,7 +227,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntrance4,
-            "ModularRamp (Ramp 4)",
+            "Modular Ramp (height 4)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance4BakedCollider.prefab",
@@ -268,7 +271,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntranceSingle,
-            "ModularRamp (Single)",
+            "Modular Ramp (Single)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Extension1BakedCollider.prefab",
@@ -291,7 +294,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntranceDouble,
-            "ModularRamp (Double)",
+            "Modular Ramp (Double)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Extension2BakedCollider.prefab",
@@ -314,7 +317,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampEntranceTriple,
-            "ModularRamp (Triple)",
+            "Modular Ramp (Triple)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Extension3BakedCollider.prefab",
@@ -339,7 +342,7 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampCenter,
-            "ModularRamp (Center Double)",
+            "Modular Ramp (Center Double)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/CenterBakedCollider.prefab",
@@ -360,13 +363,19 @@ public class MRData : IModData
 
         registerPrototype(registrator,
             PrototypeIDs.LocalEntities.ModularRampCenterSingle,
-            "ModularRamp (Center Single)",
+            "Modular Ramp (Center Single)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/CenterSingleNotBaked.prefab",
        //     "Assets/ModularRamp/Prefabs/CenterSingleBakedCollider.prefab",
             "Assets/ModularRamp/Prefabs/ModularRampCenterSingle.png"
             );
+
+
+        for (int i = allPrototypes.Count - 1; i > 0; i--)
+        {
+                allPrototypes[i].SetNextTierIndirect(allPrototypes[i - 1]);
+        }
     }
 
     void registerPrototype(
@@ -379,14 +388,15 @@ public class MRData : IModData
         string icon
         )
     {
-        ProtosDb prototypesDb3 = registrator.PrototypesDb;
+        ProtosDb prototypesDb = registrator.PrototypesDb;
 
         StaticEntityProto.ID newID = protoID;
         Proto.Str str = Proto.CreateStr((Proto.ID)protoID, rampDescription, MRData.RAMPS_DESC);
-        ImmutableArray<ToolbarEntryData>? categories = new ImmutableArray<ToolbarEntryData>?(registrator.GetCategoriesProtos(Ids.ToolbarCategories.Transports));
+        ImmutableArray<ToolbarEntryData>? categories = new ImmutableArray<ToolbarEntryData>?(registrator.GetCategoriesProtos(Ids.ToolbarCategories.Vehicles));
         LayoutEntityProto.Gfx graphics = new LayoutEntityProto.Gfx(prefab, customIconPath : icon, categories: categories, useInstancedRendering: false);
         MRPrototype newProto = new MRPrototype(newID, str, entityLayout, entityCosts, graphics);
-        prototypesDb3.Add<MRPrototype>(newProto);
+        prototypesDb.Add<MRPrototype>(newProto);
+        allPrototypes.Add(newProto);
 
     }
 

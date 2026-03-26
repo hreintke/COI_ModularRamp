@@ -159,7 +159,7 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance1BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance1.png"
             );
 
         // Entrance 2
@@ -182,7 +182,7 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance2BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance2.png"
             );
 
         // Entrance 3
@@ -205,7 +205,7 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance3BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance3.png"
             );
 
         // Entrance 4
@@ -228,7 +228,7 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance4BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance4.png"
             );
 #if false
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
@@ -363,8 +363,9 @@ public class MRData : IModData
             "ModularRamp (Center Single)",
             newLayout,
             entityCost.MapToEntityCosts(registrator),
-            "Assets/ModularRamp/Prefabs/CenterSingleBakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampCenter.png"
+            "Assets/ModularRamp/Prefabs/CenterSingleNotBaked.prefab",
+       //     "Assets/ModularRamp/Prefabs/CenterSingleBakedCollider.prefab",
+            "Assets/ModularRamp/Prefabs/ModularRampCenterSingle.png"
             );
     }
 

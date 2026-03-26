@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.50f1
-CRC: 2160580571
+CRC: 1235885420
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 093395660e7752a1dcb54e6cb2cacce1
+    Hash: 9d2a4f2ee8297087b66837fa57eafac8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: dc2bee55197116c33a9879c527f02618
+    Hash: 3219c50854ff2a782d7e36576b5dbf5b
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: d4a452325de8b80c36a87f12b3a81f2c
+    Hash: db7d370f0a19d1165dcaa85d75346928
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -29,10 +29,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 64
-  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/ModularRamp/Prefabs/Entrance2BakedCollider.prefab
+- Assets/ModularRamp/Prefabs/CenterSingleNotBaked.prefab
 Dependencies:
 - C:/Userdata/CaptainOfIndustry/Mods/ModularRamp/ModularRampAssets/AssetBundles/materials_23da

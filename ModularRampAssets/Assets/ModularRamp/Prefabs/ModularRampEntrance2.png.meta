@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 797b82298b4781649a6bb9078f1332e9
+guid: e234680725d25b4439b3d184cf041557
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -112,6 +112,6 @@ TextureImporter:
     nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  userData: ModularRampCenter.png
+  userData: ModularRampEntrance2.png
   assetBundleName: prefabs_dcba
   assetBundleVariant: 

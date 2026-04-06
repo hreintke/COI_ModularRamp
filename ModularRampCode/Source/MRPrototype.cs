@@ -18,7 +18,7 @@ public partial class PrototypeIDs
         public static readonly MRPrototype.ID ModularRampEntrance2 = new MRPrototype.ID("ModularRampEntrance2");
         public static readonly MRPrototype.ID ModularRampEntrance = new MRPrototype.ID("ModularRampEntrance");
         public static readonly MRPrototype.ID ModularRampEntrance4 = new MRPrototype.ID("ModularRampEntrance4");
-//        public static readonly MRPrototype.ID ModularRampEntrance6 = new MRPrototype.ID("ModularRampEntrance6");
+        public static readonly MRPrototype.ID ModularRampEntrance6 = new MRPrototype.ID("ModularRampEntrance6");
         public static readonly MRPrototype.ID ModularRampEntrance1 = new MRPrototype.ID("ModularRampEntrance1");
         public static readonly MRPrototype.ID ModularRampEntranceSingle = new MRPrototype.ID("ModularRampSingle");
         public static readonly MRPrototype.ID ModularRampEntranceDouble = new MRPrototype.ID("ModularRampDouble");

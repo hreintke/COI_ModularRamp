@@ -30,6 +30,7 @@ public class MRResearch : IModData
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampCenterSingle)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance4)
+            .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance6)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance2)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntrance1)
             .AddLayoutEntityToUnlock(PrototypeIDs.LocalEntities.ModularRampEntranceSingle)

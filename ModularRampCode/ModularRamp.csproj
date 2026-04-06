@@ -8,7 +8,7 @@
 	
 	<PropertyGroup>
 		<AssemblyName>$(ModName)</AssemblyName>
-		<Version>2.1.8</Version>
+		<Version>2.2.1</Version>
 		<OutputType>Library</OutputType>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<LangVersion>latest</LangVersion>
@@ -42,7 +42,6 @@
 	  <Compile Remove="Source\MRData - Copy %283%29.cs" />
 	  <Compile Remove="Source\MRData - Copy %284%29.cs" />
 	  <Compile Remove="Source\MRData - Copy %285%29.cs" />
-	  <Compile Remove="Source\MRData - Copy.cs" />
 	</ItemGroup>
 
 	<ItemGroup>

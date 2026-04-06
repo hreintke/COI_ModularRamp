@@ -44,6 +44,9 @@ entrance3bakedcollider_fa24
 entrance4bakedcollider_739f
     Assets/ModularRamp/Prefabs/Entrance4BakedCollider.prefab
 
+entrance6bakedcollider_214f
+    Assets/ModularRamp/Prefabs/Entrance6BakedCollider.prefab
+
 entrancebakedcollider_f0c6
     Assets/ModularRamp/Prefabs/EntranceBakedCollider.prefab
 
@@ -70,6 +73,7 @@ prefabs_dcba
     Assets/ModularRamp/Prefabs/ModularRampEntrance2.png
     Assets/ModularRamp/Prefabs/ModularRampEntrance3.png
     Assets/ModularRamp/Prefabs/ModularRampEntrance4.png
+    Assets/ModularRamp/Prefabs/ModularRampEntrance6.png
     Assets/ModularRamp/Prefabs/ModularRampSingle.png
     Assets/ModularRamp/Prefabs/ModularRampSingle_Old.png
     Assets/ModularRamp/Prefabs/ModularRampTriple.png

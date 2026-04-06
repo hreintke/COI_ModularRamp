@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.50f1
-CRC: 871321482
+CRC: 1003907565
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: af64e5b6cf830bfb105592f1996207fc
+    Hash: a704a69a3e7bf7351cc74223b2864755
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5527383dc91eba37123fc67ad6efaa19
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: cd4b31abc8d691fdf50e025c21d54fba
+    Hash: d9d4345754fca01de304d83396824249
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -20,6 +20,7 @@ Assets:
 - Assets/ModularRamp/Prefabs/ModularRampEntrance1.png
 - Assets/ModularRamp/Prefabs/ModularRampEntrance4.png
 - Assets/ModularRamp/Prefabs/ModularRampSingle_Old.png
+- Assets/ModularRamp/Prefabs/ModularRampEntrance6.png
 - Assets/ModularRamp/Prefabs/ModularRampSingle.png
 - Assets/ModularRamp/Prefabs/ModularRampCenter_Old.png
 - Assets/ModularRamp/Prefabs/ModularRampCenterSingle.png

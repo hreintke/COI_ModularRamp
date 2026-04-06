@@ -24,7 +24,8 @@ public class MRData : IModData
 {
     public static readonly LocStr RAMPS_DESC;
 
-    public Lyst<MRPrototype> allPrototypes = new();
+    public Lyst<MRPrototype> rampPrototypes = new();
+    public Lyst<MRPrototype> extensionPrototypes = new();
 
     public void RegisterData(ProtoRegistrator registrator)
     {
@@ -42,7 +43,7 @@ public class MRData : IModData
              new LayoutTokenSpec(heightFrom : 2,
                                  heightToExcl :3,
                                  LayoutTileConstraint.Ground | LayoutTileConstraint.NoRubbleAfterCollapse,
-                                 minTerrainHeight: new int?(-2),
+                                 minTerrainHeight: new int?(-4),
                                  maxTerrainHeight: new int?(2),
                                  vehicleHeight : new Fix32?((Fix32)(2))))),
 
@@ -50,7 +51,7 @@ public class MRData : IModData
              new LayoutTokenSpec(heightFrom : 2,
                                   heightToExcl : 3,
                                   LayoutTileConstraint.Ground | LayoutTileConstraint.NoRubbleAfterCollapse,
-                                  minTerrainHeight: new int?(-2),
+                                  minTerrainHeight: new int?(-4),
                                   maxTerrainHeight: new int?(2),
                                   vehicleHeight :  new Fix32?(EntityLayout.VEHICLE_INACCESSIBLE_HEIGHT.Value)))),
 
@@ -142,8 +143,6 @@ public class MRData : IModData
 
         // Entrance 1
 
-        // Entrance 1
-
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
             "[1][1][2]&4]",
             "_1_<R0<R1_2=",
@@ -162,7 +161,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance1BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance1.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance1.png",
+            rampPrototypes
             );
 
         // Entrance 2
@@ -185,7 +185,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance2BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance2.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance2.png",
+            rampPrototypes
             );
 
         // Entrance 3
@@ -208,7 +209,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance3BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance3.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance3.png",
+            rampPrototypes
             );
 
         // Entrance 4
@@ -231,18 +233,19 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance4BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance4.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance4.png",
+            rampPrototypes
             );
-#if false
+
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
-    "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]",
-    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
-    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
-    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
-    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
-    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
-    "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
-    "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]");
+            "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+            "_1_<R0<R1<R2<R2<R3<R3<R4<R4<R5<R5<R6<R6_7=",
+            "[1][1][2]=23=23=24=24=24=24&5]&6]&6]&6]&7]");
 
         entityCost = new EntityCostsTpl.Builder().CP2(60).Concrete(140);
 
@@ -252,9 +255,10 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Entrance6BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampEntrance.png"
+            "Assets/ModularRamp/Prefabs/ModularRampEntrance6.png",
+            rampPrototypes
             );
-#endif
+
         // Extension Single
 
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
@@ -275,7 +279,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Extension1BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampSingle.png"
+            "Assets/ModularRamp/Prefabs/ModularRampSingle.png",
+            extensionPrototypes
         );
 
         // Extension Double 
@@ -298,7 +303,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Extension2BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampDouble.png"
+            "Assets/ModularRamp/Prefabs/ModularRampDouble.png",
+            extensionPrototypes
             );
 
         // Extension Triple
@@ -321,7 +327,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/Extension3BakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampTriple.png"
+            "Assets/ModularRamp/Prefabs/ModularRampTriple.png",
+            extensionPrototypes
             );
 
 
@@ -346,7 +353,8 @@ public class MRData : IModData
             newLayout,
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/CenterBakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampCenter.png"
+            "Assets/ModularRamp/Prefabs/ModularRampCenter.png",
+            extensionPrototypes
             );
 
         newLayout = registrator.LayoutParser.ParseLayoutOrThrow(layoutParams,
@@ -368,13 +376,18 @@ public class MRData : IModData
             entityCost.MapToEntityCosts(registrator),
             "Assets/ModularRamp/Prefabs/CenterSingleNotBaked.prefab",
        //     "Assets/ModularRamp/Prefabs/CenterSingleBakedCollider.prefab",
-            "Assets/ModularRamp/Prefabs/ModularRampCenterSingle.png"
+            "Assets/ModularRamp/Prefabs/ModularRampCenterSingle.png",
+            extensionPrototypes
             );
 
 
-        for (int i = allPrototypes.Count - 1; i > 0; i--)
+        for (int i = rampPrototypes.Count - 1; i > 0; i--)
         {
-                allPrototypes[i].SetNextTierIndirect(allPrototypes[i - 1]);
+                rampPrototypes[i].SetNextTierIndirect(rampPrototypes[i - 1]);
+        }
+        for (int i = extensionPrototypes.Count - 1; i > 0; i--)
+        {
+            extensionPrototypes[i].SetNextTierIndirect(extensionPrototypes[i - 1]);
         }
     }
 
@@ -385,24 +398,22 @@ public class MRData : IModData
         EntityLayout entityLayout,
         EntityCosts entityCosts,
         string prefab,
-        string icon
+        string icon,
+        Lyst<MRPrototype> prototypeLyst
         )
     {
         ProtosDb prototypesDb = registrator.PrototypesDb;
 
-        StaticEntityProto.ID newID = protoID;
         Proto.Str str = Proto.CreateStr((Proto.ID)protoID, rampDescription, MRData.RAMPS_DESC);
         ImmutableArray<ToolbarEntryData>? categories = new ImmutableArray<ToolbarEntryData>?(registrator.GetCategoriesProtos(Ids.ToolbarCategories.Vehicles));
         LayoutEntityProto.Gfx graphics = new LayoutEntityProto.Gfx(prefab, customIconPath : icon, categories: categories, useInstancedRendering: false);
-        MRPrototype newProto = new MRPrototype(newID, str, entityLayout, entityCosts, graphics);
+        MRPrototype newProto = new MRPrototype(protoID, str, entityLayout, entityCosts, graphics);
         prototypesDb.Add<MRPrototype>(newProto);
-        allPrototypes.Add(newProto);
-
+        prototypeLyst.Add(newProto);
     }
 
     static MRData()
     {
         MRData.RAMPS_DESC = Loc.Str("VehicleRamp__desc", "Allows vehicles to cross obstacles such as transports.", "description for vehicle ramps");
     }
-
 }
